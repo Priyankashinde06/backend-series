@@ -5,14 +5,13 @@ import { uploadOnCloudinary } from "../utils/cloundinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
-  // validation - not empty
-
-  //return res
 
   // get user details from frontend
 
   const { fullName, email, username, password } = req.body;
   console.log("email: ", email);
+
+  // validation - not empty
 
   if (
     [fullName, email, username, password].some((field) => field?.trim() === "")
@@ -73,6 +72,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(500, "Something went wrong while registering the user")
   }
 
+    //return res
   return res.status(201).json(
     new ApiResponse(200, createdUser, "User registered Successfully")
   )

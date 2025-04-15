@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from "cloudinary";s 
+import { v2 as cloudinary } from "cloudinary"; 
 import fs, { unlinkSync } from 'fs'
 
 

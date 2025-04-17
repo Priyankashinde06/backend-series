@@ -205,7 +205,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
       throw new ApiError(401, "Invalid refersh token")
     }
 
-    if (incomingRefreshToken !== user?.refershToken) {
+    if (!incomingRefreshToken !== user?.refershToken) {
       throw new ApiError(401, "Refresh token is expired or used")
     }
 
